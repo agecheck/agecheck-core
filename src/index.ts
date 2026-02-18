@@ -19,3 +19,4 @@ export * from "./verify.js";
 export * from "./cookie.js";
 export * from "./webhooks.js";
 export * from "./sdk.js";
+export * from "./provider.js";

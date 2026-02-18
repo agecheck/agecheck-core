@@ -102,12 +102,66 @@ export interface VerifiedCookiePayload {
   level: string;
 }
 
+export type VerificationType = "passkey" | "oid4vp" | "other";
+export type EvidenceType = "webauthn_assertion" | "sd_jwt" | "zk_attestation" | "other";
+
 export interface VerificationAssertion {
   provider: string;
   level: string;
   verified: true;
   verifiedAtUnix: number;
   assurance?: string;
+  verificationType?: VerificationType;
+  evidenceType?: EvidenceType;
+  providerTransactionId?: string;
+  loa?: string;
+}
+
+export interface ProviderAssertion {
+  provider: string;
+  verified: true;
+  level: string;
+  session: string;
+  verifiedAtUnix: number;
+  assurance?: string;
+  verificationType?: VerificationType;
+  evidenceType?: EvidenceType;
+  providerTransactionId?: string;
+  loa?: string;
+}
+
+export interface ExternalProviderAssertion {
+  provider: string;
+  verified: true;
+  level: string;
+  session: string;
+  verifiedAtUnix?: number;
+  assurance?: string;
+  verificationType?: VerificationType;
+  evidenceType?: EvidenceType;
+  providerTransactionId?: string;
+  loa?: string;
+}
+
+export interface ProviderFailure {
+  verified: false;
+  code: string;
+  message: string;
+  detail?: string;
+}
+
+export type ProviderVerificationResult = ExternalProviderAssertion | ProviderFailure;
+export type NormalizedProviderVerificationResult = ProviderAssertion | ProviderFailure;
+
+export interface VerifyAgeCheckCredentialInput {
+  jwt: string;
+  expectedSession: string;
+  provider?: string;
+  assurance?: string;
+  verificationType?: VerificationType;
+  evidenceType?: EvidenceType;
+  providerTransactionId?: string;
+  loa?: string;
 }
 
 export interface JwtClaims {

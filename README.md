@@ -10,9 +10,24 @@ It contains:
 - token verification (`verifyAgeToken`)
 - gate policy (`isGateRequired`)
 - signed verification cookie helpers
+- provider mode helpers for Existing Gate Integration
 - typed domain errors and models
 
 Most hostmasters should use `@agecheck/node` directly. Consume `@agecheck/core` only if you are building a framework adapter or platform integration.
+
+## Integration model support
+
+Core primitives support all three backend integration patterns:
+
+1. Managed Gate Mode
+2. Existing Gate Integration (Provider Mode)
+3. Hybrid Mode (AgeCheck + other providers)
+
+Provider Mode helpers:
+
+- `verifyAgeCheckCredential(...)`
+- `normalizeExternalProviderAssertion(...)`
+- `buildSetCookieFromProviderAssertion(...)`
 
 ## Install
 
