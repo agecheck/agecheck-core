@@ -2,8 +2,9 @@
 
 [![CI](https://github.com/agecheck/agecheck-core/actions/workflows/ci.yml/badge.svg)](https://github.com/agecheck/agecheck-core/actions/workflows/ci.yml)
 [![Publish](https://github.com/agecheck/agecheck-core/actions/workflows/publish.yml/badge.svg)](https://github.com/agecheck/agecheck-core/actions/workflows/publish.yml)
+[![npm](https://img.shields.io/npm/v/%40agecheck%2Fcore?label=npm)](https://www.npmjs.com/package/@agecheck/core)
 
-`@agecheck/core` is the security-critical core used by AgeCheck SDK adapters.
+`@agecheck/core` is the common TypeScript core used by AgeCheck SDK adapters.
 
 It contains:
 
